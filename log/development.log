@@ -1058,3 +1058,200 @@ Processing by MoviesController#index as HTML
   [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
   Rendered movies/index.html.haml within layouts/application (2.8ms)
 Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 165.91.13.92 at 2017-03-16 21:29:57 +0000
+
+
+Started GET "/movies" for 165.91.13.92 at 2017-03-16 21:29:57 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 30ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 165.91.13.92 at 2017-03-16 21:29:57 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (24.4ms)
+Completed 200 OK in 293ms (Views: 286.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/movies/1" for 165.91.13.92 at 2017-03-16 21:30:01 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/1/edit" for 165.91.13.92 at 2017-03-16 21:30:04 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/edit.html.haml within layouts/application (53.9ms)
+Completed 200 OK in 72ms (Views: 70.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/3" for 165.91.13.92 at 2017-03-16 21:30:25 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/3/edit" for 165.91.13.92 at 2017-03-16 21:30:28 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/3/edit" for 165.91.13.92 at 2017-03-16 21:30:36 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/movies/3" for 165.91.13.92 at 2017-03-16 21:30:37 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yNXfWAvF2Sa01bXICqh3FUV74BeFUDxMmdPWd89THwjLNeY23ivYlfIXlVvEu7A8hCHdaku638WPBjEmhyk/6g==", "movie"=>{"title"=>"Alien", "rating"=>"R", "release_date(1i)"=>"1979", "release_date(2i)"=>"5", "release_date(3i)"=>"25", "director"=>"r"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "r"], ["updated_at", "2017-03-16 21:30:37.900338"], ["id", 3]]
+  [1m[35m (10.8ms)[0m  commit transaction
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies/3
+Completed 302 Found in 16ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/movies/3" for 165.91.13.92 at 2017-03-16 21:30:38 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/3/edit" for 165.91.13.92 at 2017-03-16 21:30:39 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/movies/3" for 165.91.13.92 at 2017-03-16 21:30:42 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lGityiz/wvjHeftGKfkwUO3RKk+DUAM9YteyXntL85aXiJSk+RHDS4G729Xn6vd5LIsXMk264LR0AlUPMzHTdA==", "movie"=>{"title"=>"Alien", "rating"=>"R", "release_date(1i)"=>"1979", "release_date(2i)"=>"5", "release_date(3i)"=>"25", "director"=>""}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", ""], ["updated_at", "2017-03-16 21:30:42.090178"], ["id", 3]]
+  [1m[35m (8.6ms)[0m  commit transaction
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies/3
+Completed 302 Found in 14ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/movies/3" for 165.91.13.92 at 2017-03-16 21:30:42 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 86ms (Views: 85.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 165.91.13.92 at 2017-03-16 21:30:43 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 165.91.13.92 at 2017-03-16 21:30:43 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 165.91.13.92 at 2017-03-16 21:32:50 +0000
+
+
+Started GET "/movies" for 165.91.13.92 at 2017-03-16 21:32:50 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 28ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 165.91.13.92 at 2017-03-16 21:32:50 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (22.0ms)
+Completed 200 OK in 237ms (Views: 230.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/movies/new" for 165.91.13.92 at 2017-03-16 21:32:53 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 23ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 165.91.13.92 at 2017-03-16 21:33:02 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wDbHYuaRrNJwr2U5LnIj7XnBB7FJJFxFlL+BMB8Lu4rD1v4MM3+tYTZtRargYeTEuJs6zIfOv8yCamZhV3GbaA==", "movie"=>{"title"=>"test", "rating"=>"G", "release_date(1i)"=>"2017", "release_date(2i)"=>"3", "release_date(3i)"=>"16", "director"=>"yo"}, "commit"=>"Save Changes"}
+  [1m[35m (1.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "director", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["rating", "G"], ["director", "yo"], ["release_date", "2017-03-16 00:00:00.000000"], ["created_at", "2017-03-16 21:33:02.680452"], ["updated_at", "2017-03-16 21:33:02.680452"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies
+Completed 302 Found in 37ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/movies" for 165.91.13.92 at 2017-03-16 21:33:02 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 70ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 165.91.13.92 at 2017-03-16 21:33:02 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/5" for 165.91.13.92 at 2017-03-16 21:33:06 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered movies/show.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 34ms (Views: 28.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/movies/5" for 165.91.13.92 at 2017-03-16 21:33:08 +0000
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XRROY1zsTW8WONoJSavuU1zJBp2BqD3PHaMtjgssmvle9HcNiQJM3FD6+pqHuCl6nZM74E9C3kYLdsrfQ1a6Gw==", "id"=>"5"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 5]]
+  [1m[35m (9.3ms)[0m  commit transaction
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies
+Completed 302 Found in 14ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/movies" for 165.91.13.92 at 2017-03-16 21:33:08 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://csce606-hw4-donghwa1231.c9users.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 165.91.13.92 at 2017-03-16 21:33:08 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.3ms)
