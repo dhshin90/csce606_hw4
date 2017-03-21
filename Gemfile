@@ -6,6 +6,7 @@ gem 'rails', '4.2.6'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
@@ -19,6 +20,7 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
+  gem 'simplecov', :require => false
 end
 group :production do
   gem 'pg'

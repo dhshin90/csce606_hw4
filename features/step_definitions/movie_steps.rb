@@ -29,17 +29,11 @@ When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
-	split_text = text.split("\s")
-	
-	if split_text.length > 1
-		
-	else
-		if page.respond_to? :should
-    		page.should have_content(text)
-		else
-    		assert page.has_content?(text)
-		end
-	end
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
 end
 
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
